@@ -1,0 +1,49 @@
+﻿@model WebApplication2.Models.Student
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h4>Student</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MaSV" class="control-label"></label>
+                <input asp-for="MaSV" class="form-control" />
+                <span asp-validation-for="MaSV" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HoTen" class="control-label"></label>
+                <input asp-for="HoTen" class="form-control" />
+                <span asp-validation-for="HoTen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiemSo" class="control-label"></label>
+                <input asp-for="DiemSo" class="form-control" />
+                <span asp-validation-for="DiemSo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Ghi file text" class="btn btn-primary" name="GhiFile" />
+                <input type="submit" value="Ghi file Json" class="btn btn-primary" name="GhiFile" />
+            </div>
+            <div>
+                <a class="btn btn-success" asp-action="DocFile" asp-route-loai="text">Read file text</a>
+                <a class="btn btn-dark" asp-action="DocFile" asp-route-loai="json">Read file json</a>   
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
